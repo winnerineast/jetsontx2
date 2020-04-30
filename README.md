@@ -63,3 +63,5 @@ $ ls /usr/local/lib/python3.6/dist-packages/cv2.*
 /usr/local/lib/python3.6/dist-packages/cv2.cpython-35m-aarch64-linux-gnu.so
 $ python3 -c 'import cv2; print(cv2.__version__)'
 3.4.0
+$sudo apt-get install gstreamer1.0-plugins-bad-faad \
+                       gstreamer1.0-plugins-bad-videoparsers
