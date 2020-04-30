@@ -55,6 +55,8 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local \
         -D ENABLE_NEON=ON -D WITH_LIBV4L=ON -D BUILD_TESTS=OFF \
         -D BUILD_PERF_TESTS=OFF -D BUILD_EXAMPLES=OFF \
         -D WITH_QT=ON -D WITH_OPENGL=ON ..
+sudo vim /usr/local/cuda/include/cuda_gl_interop.h
+## put " #include <GL/gl.h>" to the line "#error Please include the appropriate gl headers before including cuda_gl_interop.h"
 $ make -j4
 $ sudo make install
 $ ls /usr/local/lib/python3.6/dist-packages/cv2.*
