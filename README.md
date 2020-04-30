@@ -37,16 +37,8 @@ $ sudo apt-get install qt5-default
 $ sudo apt-get install python3-dev python3-pip python3-tk
 $ sudo pip3 install numpy
 $ sudo pip3 install matplotlib
-### Modify matplotlibrc (line #41) as 'backend      : TkAgg'
+### Modify matplotlibrc (line #81) as 'backend      : TkAgg'
 $ sudo vim /usr/local/lib/python3.5/dist-packages/matplotlib/mpl-data/matplotlibrc
-### Also install dependencies for python2
-### Note that I install numpy with pip, so that I'd be using a newer
-### version of numpy than the apt-get package
-$ sudo apt-get install python-dev python-pip python-tk
-$ sudo pip2 install numpy
-$ sudo pip2 install matplotlib
-### Modify matplotlibrc (line #41) as 'backend      : TkAgg'
-$ sudo vim /usr/local/lib/python2.7/dist-packages/matplotlib/mpl-data/matplotlibrc
 ### Download opencv-3.4.0 source code
 $ mkdir -p ~/src
 $ cd ~/src
