@@ -1,7 +1,8 @@
 # jetsontx2
 ### the code collection on jetson tx2
 
-## capture_and_display_video_from_camera.py
+## [NVIDIA Jetson TX2 Setup]()
+## [capture_and_display_video_from_camera.py](./capture_and_display_video_from_camera.py)
 ## Prerequsite:
 ### Remove all old opencv stuffs installed by JetPack (or OpenCV4Tegra)
 $ sudo apt-get purge libopencv*
