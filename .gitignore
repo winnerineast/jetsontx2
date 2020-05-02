@@ -218,3 +218,9 @@ dkms.conf
 *.out
 *.app
 
+.idea/.gitignore
+.idea/inspectionProfiles/
+.idea/jetsontx2.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
