@@ -7,27 +7,27 @@ So let's get a Linux environment, JetPack, Cuda, and a few other items installed
 
 First of all, much credit is owed to Klein Yuan [on Github](https://github.com/KleinYuan/tx2-flash) for his tutorial. This walk through will build off of that. Also, [here](https://youtu.be/D7lkth34rgM) is an awesome walkthrough on Youtube of the setup and install of JetPack, but some of the details were missing for a VM (hence why I wrote this!)
 
-I will be using a MacBook Pro(running 10.12.6, Sierra) with VirtualBox to flash the TX2
+I will be using a MacBook Pro(running 10.15.4, Catalina) with VirtualBox to flash the TX2
 
 The entire process takes about 2 hours(depends on connection/data transfer rate)
 
 ##### 1. Get VirtualBox to run a Linux Environment
 
-Since the Jetson TX2 must be flashed with a Linux environment, and ideally 14.04 Ubuntu(have heard of 16.06 working also), we will need to create a VM with Linux running.
+Since the Jetson TX2 must be flashed with a Linux environment, and ideally 18.04 Ubuntu(have heard of 16.06 working also), we will need to create a VM with Linux running.
 
-Download VirtualBox [here](https://www.virtualbox.org/), or use VMWare if you're on Windows. With VirtualBox, you're also going to need the *Extension Package* to use USB 2.0/3.0. This can be directly downloaded [here](http://download.virtualbox.org/virtualbox/5.2.2/Oracle_VM_VirtualBox_Extension_Pack-5.2.2-119230.vbox-extpack)
+Download VirtualBox [here](https://www.virtualbox.org/), or use VMWare if you're on Windows. With VirtualBox, you're also going to need the *Extension Package* to use USB 2.0/3.0. This can be directly downloaded [here](http://download.virtualbox.org/virtualbox/6.1.6/Oracle_VM_VirtualBox_Extension_Pack-6.1.6.vbox-extpack)
 
 Once you have VirtualBox, we need to get a boot image for Linux.
 
 ##### 2. Download Linux Boot Image
-Since we need to use Linux Ubuntu 14.04, let's grab that from the [Linux Downloads page.](http://releases.ubuntu.com/14.04/)
+Since we need to use Linux Ubuntu 18.04, let's grab that from the [Linux Downloads page.](http://releases.ubuntu.com/18.04/)
 
-[This link](http://releases.ubuntu.com/14.04/ubuntu-14.04.5-desktop-amd64.iso) will directly download the `.iso` file for 64-bit desktop machines.
+[This link](http://releases.ubuntu.com/8.04/ubuntu-14.04.4-desktop-amd64.iso) will directly download the `.iso` file for 64-bit desktop machines.
 
 ##### 3. Setup VM
 With the Linux Boot Image downloaded, we need to setup the VM and boot into it. 
 
-Select the *New* Icon wheel in the upper left of VirtualBox. Fill in the necessary information. You should select at least 1+ GB RAM, and 32GB HD.
+Select the *New* Icon wheel in the upper left of VirtualBox. Fill in the necessary information. You should select at least 8+ GB RAM, and 80GB HD.
 
 Go to Settings --> Network --> Adapter 1, change Attached to to Bridged Adapter, and name en0: Wi-Fi
 
@@ -36,6 +36,11 @@ Now launch the VM you just created. At this point, if it hasn't already, Virtual
 ##### 4. Setup Linux
 
 Once the Linux environment comes up, it will ask if you want to try out Linux, or do a full install. It worked for me to do a full installation. Select that option, and walk through the Linux Install.
+In order to install USB2.0/3.0 driver for flashing tx2, we need to install virtualbox extension pack.
+```shell script
+sudo apt update && sudo apt upgrade -y
+sudo apt install gcc make perl 
+```
 
 ##### 5. Get JetPack
 
