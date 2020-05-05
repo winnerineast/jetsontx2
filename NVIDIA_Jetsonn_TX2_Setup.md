@@ -44,10 +44,15 @@ sudo apt install gcc make perl
 
 ##### 5. Get JetPack
 
-Once inside the Linux Environment, get NVIDIA JetPack [here](https://developer.nvidia.com/embedded/jetpack) *(at the time of this writing it was version 3.1)*. You're going to need to setup a developer account with them, if you don't have one already!
+Once inside the Linux Environment, get NVIDIA JetPack [here](https://developer.nvidia.com/embedded/jetpack) *(at the time of this writing it was version 4.4DP)*. You're going to need to setup a developer account with them, if you don't have one already!
 
 Once this is downloaded, take the file and put it in a directory like `~/documents/JetPack/`
-
+```shell script
+sudo dpkg -i sdkmanager_xxx.deb
+# in case it fails and just install dependency libraries and re-install it.
+sdkmanager
+```
+In GUI, follow up the wizard and download all files to be used for flashing jetson tx2.
 ##### 6. Wire the NVIDIA Jetson TX2
 
 With the Jetson shutdown and unplugged from power, plug in the:
